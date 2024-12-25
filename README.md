@@ -4,4 +4,3 @@ This homepage was bootstrapped with [Create React App](https://github.com/facebo
 
 #### A Basic Idea
 ![Draft Image](public/images/draft.jpg)
-
