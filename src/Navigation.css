@@ -1,0 +1,65 @@
+/* Navigation bar container */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and navigation links */
+    background-color: #ffffff; /* White background for a clean look */
+    padding: 20px 50px; /* Adjusted padding for proper spacing */
+    border-bottom: 1px solid #e0e0e0; /* Subtle bottom border */
+    font-size: 16px; /* Base font size */
+    font-family: "Helvetica Neue", Arial, sans-serif; /* Modern and clean font */
+}
+
+/* Logo styling (left corner) */
+.navigation-logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333; /* Deep gray color for the logo */
+}
+
+/* Logo link */
+.navigation-link.logo {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navigation-link.logo:hover {
+    color: #000; /* Hover effect for the logo */
+}
+
+/* Navigation list styling */
+.navigation-list {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Reduced gap for closer links */
+    padding: 0;
+    margin: 0;
+    justify-content: flex-start; /* Align navigation links closer to the left */
+    flex: 0 1 auto; /* Allow navigation links to use only the needed space */
+}
+
+/* Navigation item */
+.navigation-item {
+    margin: 0;
+}
+
+/* Navigation link styling */
+.navigation-link {
+    text-decoration: none;
+    color: #444; /* Slightly darker gray for better readability */
+    font-size: 17px; /* Slightly larger font for better visibility */
+    font-weight: bold; /* Bold for emphasis */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth hover and active transition */
+}
+
+.navigation-link:hover {
+    color: #222; /* Darker gray on hover */
+    border-bottom: 2px solid #222; /* Underline effect on hover */
+}
+
+.navigation-link.active {
+    font-weight: bold;
+    color: #000; /* Black color for active link */
+    border-bottom: 2px solid #000; /* Underline effect for the active link */
+}

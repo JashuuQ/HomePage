@@ -1,11 +1,11 @@
 import React from "react";
 
-function About() {
+const About: React.FC = () => {
   return (
     <div>
       <h1>About Me</h1>
       <p>Hello! I am Jiashu, a passionate developer and researcher.</p>
-      <img src="profile.jpg" alt="Profile" style={{ width: "150px", borderRadius: "50%" }} />
+      <img src="/images/profile.jpg" alt="Profile" style={{ width: "150px", borderRadius: "50%" }} />
       <ul>
         <li>Location: Boston, MA, USA</li>
         <li>Email: iqjs0124@gmail.com</li>
@@ -14,6 +14,6 @@ function About() {
       </ul>
     </div>
   );
-}
+};
 
 export default About;
