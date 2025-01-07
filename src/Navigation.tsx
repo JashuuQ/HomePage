@@ -1,53 +1,51 @@
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
+interface Link {
+  to: string;
+  label: string;
+}
+
+// Using the Array.map method to generate navigation links dynamically 
 function Navigation() {
+  const links: Link[] = [
+    { to: "/about", label: "About" },
+    { to: "/projects", label: "Projects" },
+    { to: "/education", label: "Education" },
+    { to: "/resume", label: "Resume" },
+  ];
+
   return (
     <nav className="navigation">
-      <div className="navigation-logo">
+      {/* Home */}
+      <div className="navigation-home">
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "navigation-link active" : "navigation-link")}
+          className={({ isActive }) =>
+            isActive ? "navigation-link active" : "navigation-link"
+          }
         >
           Jiashu's Home
         </NavLink>
       </div>
+      {/* Navigation list */}
       <ul className="navigation-list">
-        <li className="navigation-item">
-          <NavLink
-            to="/about"
-            className={({ isActive }) => (isActive ? "navigation-link active" : "navigation-link")}
-          >
-            About
-          </NavLink>
-        </li>
-        <li className="navigation-item">
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? "navigation-link active" : "navigation-link")}
-          >
-            Projects
-          </NavLink>
-        </li>
-        <li className="navigation-item">
-          <NavLink
-            to="/education"
-            className={({ isActive }) => (isActive ? "navigation-link active" : "navigation-link")}
-          >
-            Education
-          </NavLink>
-        </li>
-        <li className="navigation-item">
-          <NavLink
-            to="/resume"
-            className={({ isActive }) => (isActive ? "navigation-link active" : "navigation-link")}
-          >
-            Resume
-          </NavLink>
-        </li>
+        {links.map((link) => (
+          <li key={link.to} className="navigation-item">
+            <NavLink
+              to={link.to}
+              className={({ isActive }) =>
+                isActive ? "navigation-link active" : "navigation-link"
+              }
+            >
+              {link.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   );
 }
+
 
 export default Navigation;
