@@ -63,10 +63,9 @@ const RightProfile: React.FC = () => {
         <Typewriter
           options={{
             strings: [
-              "A Data Engineer",
               "Self-Driven",
               "Quick Starter",
-              "Continuous Learner",
+              "Life Learner",
             ],
             autoStart: true,
             loop: true,
@@ -75,7 +74,8 @@ const RightProfile: React.FC = () => {
         />
       </TypewriterText>
       <Description>
-        Just moving step-by-step forward to enhance my skills and knowledge.
+        Wanna be a life learner to enhance my skills and knowledge.
+        A Passionate Learner & Developer
       </Description>
       <ButtonGroup>
         <PrimaryButton>Read More</PrimaryButton>
