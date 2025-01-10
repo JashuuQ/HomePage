@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
+import { useNavigate } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa";
 
 const RightContainer = styled.div`
   flex: 3;
@@ -8,64 +10,120 @@ const RightContainer = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 120px 60px;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3.2rem;
+  margin-bottom: 65px;
+  font-weight: bold;
+`;
+
+const Subtitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
 `;
 
 const TypewriterText = styled.h3`
-  margin-bottom: 30px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
 `;
 
 const Description = styled.p`
-  font-size: 1.2rem;
-  text-align: center;
-  max-width: 600px;
+  margin-bottom: 70px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 800px;
+  color: rgba(255, 255, 255, 0.85); 
 `;
 
 const ButtonGroup = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
 `;
 
 const PrimaryButton = styled.button`
-  padding: 10px 20px;
+  padding: 11px 20px;
+  font-size: 1rem;
   cursor: pointer;
   background-color: #fff;
   color: #000;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 6px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+  }
 `;
 
 const SecondaryButton = styled.button`
   padding: 10px 20px;
+  font-size: 1rem;
   cursor: pointer;
   background-color: transparent;
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: 6px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+  }
+`;
+
+const EmailDisplay = styled.div`
+  margin-top: 20px;
+  font-size: 1rem;
+  color:rgba(255, 255, 255, 0.83);
 `;
 
 const RightProfile: React.FC = () => {
+  const navigate = useNavigate();
+  const [showEmail, setShowEmail] = useState(false);
+
+  const handleReadMore = () => {
+    navigate("/about");
+  };
+
+  const handleContactMe = () => {
+    setShowEmail((prev) => !prev);
+  };
+
   return (
     <RightContainer>
-      <Title>Hi, I'm Jiashu!</Title>
+      <Title>Hello and welcome!</Title>
+      <Subtitle>I'm Jiashu (Cecilia), </Subtitle>
+
       <TypewriterText>
         <Typewriter
           options={{
             strings: [
-              "Self-Driven",
-              "Quick Starter",
-              "Life Learner",
+              "A CS Master Student",
+              "A Passionate Learner",
+              "A Self-Driven Innovator",
+              "A Full-Stack Developer",
             ],
             autoStart: true,
             loop: true,
@@ -73,14 +131,23 @@ const RightProfile: React.FC = () => {
           }}
         />
       </TypewriterText>
+
       <Description>
-        Wanna be a life learner to enhance my skills and knowledge.
-        A Passionate Learner & Developer
+        Committed to lifelong learning, build my knowledge and skills step by step.
       </Description>
+
       <ButtonGroup>
-        <PrimaryButton>Read More</PrimaryButton>
-        <SecondaryButton>Contact Me</SecondaryButton>
+        <PrimaryButton onClick={handleReadMore}>Read More</PrimaryButton>
+        <SecondaryButton onClick={handleContactMe}>Contact Me</SecondaryButton>
       </ButtonGroup>
+
+      {showEmail && (
+        <EmailDisplay>
+          <FaEnvelope size={15} />
+          <span> iqjs0124@gmail.com</span>
+        </EmailDisplay>
+      )}
+
     </RightContainer>
   );
 };
