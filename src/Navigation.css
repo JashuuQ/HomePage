@@ -18,7 +18,7 @@
 .navigation-home {
     font-weight: bold;
     color: #696666;
-    flex-basis: 25%;
+    flex-basis: 26%;
 }
 
 .navigation-home .navigation-link {
@@ -36,7 +36,7 @@
    Navigation Links
    ========================= */
 .navigation-list {
-    flex-basis: 75%;
+    flex-basis: 73%;
     list-style: none;
     display: flex;
     gap: 50px;
