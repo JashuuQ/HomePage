@@ -11,8 +11,7 @@ function Navigation() {
   const links: Link[] = [
     { to: "/about", label: "About" },
     { to: "/projects", label: "Projects" },
-    { to: "/education", label: "Education" },
-    { to: "/resume", label: "Resume" },
+    { to: "/blog", label: "Blog" },
   ];
 
   return (

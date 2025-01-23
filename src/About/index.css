@@ -1,0 +1,75 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main container */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Text section */
+.about-content {
+  flex: 1 1 60%;
+  padding: 20px;
+}
+
+.about-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Image section */
+.about-images {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Dynamic border animation */
+@keyframes dynamic-border {
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
+/* Image container */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 350px;
+  border: 0.5rem solid #f1f1f1;
+  /* Inset shadow on border */
+  box-shadow: inset 0 0 0 2rem hsla(0, 0%, 100%, 0.3);
+  /* Crop overflow */
+  overflow: hidden;
+  /* Apply dynamic border */
+  animation: dynamic-border 8s ease-in-out infinite;
+}
+
+/* Image style */
+.profile-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

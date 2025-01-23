@@ -137,7 +137,7 @@ const LeftProfile: React.FC = () => {
 
   return (
     <LeftContainer>
-      <ProfileImage src="/images/profile.jpg" alt="Profile" />
+      <ProfileImage src="/images/profile1.jpg" alt="Profile1" />
       <NameTitle>Jiashu Qian</NameTitle>
       <InfoText>CS Master @ Northeastern, B.S. @ ZJU</InfoText>
 
