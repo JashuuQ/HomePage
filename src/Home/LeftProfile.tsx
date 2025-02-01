@@ -139,7 +139,11 @@ const LeftProfile: React.FC = () => {
     <LeftContainer>
       <ProfileImage src="/images/profile1.jpg" alt="Profile1" />
       <NameTitle>Jiashu Qian</NameTitle>
-      <InfoText>CS Master @ Northeastern, B.S. @ ZJU</InfoText>
+      <InfoText>
+        CS Master @ Northeastern,
+        <br/>
+        B.S. @ ZJU
+      </InfoText>
 
       <InfoList>
         {/* LOCATION */}
