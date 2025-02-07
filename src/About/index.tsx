@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <h1>About Me</h1>
           <p>
             👋 Hi! I'm Jiashu (Cecilia) Qian, a graduate Computer Science student at Northeastern University.
-            I am proficient in Java/Python, TypeScript, and MySQL, with hands-on experience in:
+            I am proficient in Java/Python, TypeScript, and Kafka, paired with hands-on experience in:
           </p>
 
           <ul className="expertise-list">
@@ -32,17 +32,19 @@ const About: React.FC = () => {
               <Underline>React</Underline>, <Underline>Spring Boot</Underline>, and <Underline>Docker</Underline>.
             </li>
             <li>
-              <strong>Machine Learning:</strong> Improved AUC by 93.86% on TENCENT/CIKM dataset through DGNN research
-              (published at <Underline>ICWS 2023</Underline>).
+              <strong>Distributed Systems:</strong> Developed a high-concurrency flash sale system with{" "}
+              <Underline>Redis</Underline> caching, <Underline>distributed transactions</Underline>, and a{" "}
+              <Underline>Circuit Breaker pattern</Underline>.
             </li>
             <li>
-              <strong>Data Engineering:</strong> Optimized ads efficiency at JD.com using <Underline>SQL</Underline> and <Underline>Kafka</Underline>.
+              <strong>Machine Learning:</strong> Improved the AUC by 93.86% on TENCENT/CIKM dataset through Dynamic Graph Neural Network research
+              (published at <Underline>ICWS 2023</Underline>).
             </li>
           </ul>
 
           <p>
             🚀 I am actively seeking <strong>Internship/Co-op</strong> opportunities in
-            <strong> full-stack development</strong>, <strong>machine learning</strong>, and <strong>data engineering</strong>.
+            <strong> full-stack development</strong>, <strong>cloud infrastructure</strong> and <strong>machine learning</strong>, .
             If you are looking for a dedicated team member, feel free to connect with me!
           </p>
 
@@ -80,8 +82,13 @@ const About: React.FC = () => {
                 <strong>Frameworks:</strong> Spring Boot, Spring Cloud, Django, Flask, React, Vue.js, Express.js, Node.js, Next.js
               </p>
               <p>
-                <strong>Technologies:</strong> Kafka, RabbitMQ, API Gateway, WebSocket, Eureka, Ribbon, Docker, Kubernetes,
-                Git, JUnit, Jenkins, Prometheus, Grafana, PostgreSQL, MongoDB, MySQL, Redis, AWS, Google Cloud Platform
+                <strong>Technologies: </strong> 
+                Kafka, RabbitMQ, Redis, 
+                API Gateway, Eureka,
+                Docker, Kubernetes,
+                Jenkins, Prometheus, Grafana,
+                PostgreSQL, MongoDB, MySQL, Redis, AWS, GCP,
+                Git
               </p>
             </div>
           </section>

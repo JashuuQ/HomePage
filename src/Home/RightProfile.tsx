@@ -133,7 +133,7 @@ const RightProfile: React.FC = () => {
       </TypewriterText>
 
       <Description>
-        Pursuing lifelong learning by building my knowledge and skills step by step :)
+        Pursuing lifelong learning, building my knowledge and skills step by step :)
       </Description>
 
       <ButtonGroup>

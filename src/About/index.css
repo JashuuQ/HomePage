@@ -56,8 +56,11 @@ strong {
 /* Left side: info */
 .about-info {
   flex: 1;
+  margin-top: 30px;
   margin-left: 80px;
   padding-right: 20px;
+  position: relative;
+  padding-bottom: 70px;
 }
 
 .about-info h1 {
@@ -66,6 +69,17 @@ strong {
   color: #222;
   font-weight: 700;
   line-height: 1.3;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease-in-out, 
+              transform 0.3s ease-in-out, 
+              border-bottom-color 0.3s ease-in-out, 
+              text-shadow 0.3s ease-in-out;
+}
+
+.about-info h1:hover {
+  transform: scale(1.03);
+  border-bottom-color: #000000;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-info p {
@@ -87,6 +101,31 @@ strong {
   line-height: 1.5;
 }
 
+/* Resume link styles */
+.resume-link {
+  margin-top: 20px;
+  text-align: center;
+  position: absolute;
+  bottom: 3;
+  left: 0;
+}
+
+.resume-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover {
+  background-color: #ccc;
+  transform: scale(1.03);
+}
 
 /* Right side: Image container */
 .about-images {
@@ -136,43 +175,7 @@ strong {
   object-fit: cover;
 }
 
-
-.resume-link {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.resume-button {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #e0e0e0;
-  color: #333;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.resume-button:hover {
-  background-color: #ccc;
-  transform: scale(1.03);
-}
-
-
-.about-info {
-  position: relative;
-  padding-bottom: 70px;
-}
-
-.resume-link {
-  position: absolute;
-}
-
-
-
-
-/* =====  Detailed information section ==== */
+/* ===== Detailed information section ==== */
 .details-section {
   max-width: 1500px;
   width: 100%;
@@ -209,7 +212,7 @@ strong {
   color: #555;
   transform: scale(1.03);
   border-bottom-color: #555;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* List style for skills and expertise */
@@ -231,7 +234,6 @@ strong {
   margin-bottom: 10px;
 }
 
-
 .experience-item h3,
 .education-item h3,
 .leadership-item h3 {
@@ -239,21 +241,51 @@ strong {
   margin-bottom: 10px;
 }
 
-
-/* Responsive adjustments for smaller screens */
+/* ===================== Responsive adjustments ===================== */
 @media (max-width: 768px) {
   .about-main {
     flex-direction: column;
+    padding: 20px;
+    gap: 20px;
   }
   
-  .about-info, 
+
+  .about-info,
   .about-images {
     flex: 1 1 100%;
     padding: 10px;
+    margin-left: 0;
+  }
+  
+  .about-info {
+    margin-top: 20px;
+  }
+  
+ 
+  .about-images {
+    width: 100%;
+    padding: 20px;
   }
   
   .image-container {
     height: 300px;
     width: 300px;
+  }
+  
+  .details-section {
+    max-width: 100%;
+    padding: 40px 20px;
+  }
+  
+  .detail-card {
+    padding: 40px 20px;
+  }
+  
+  .about-info h1 {
+    font-size: 1.8em;
+  }
+  
+  .detail-card h2 {
+    font-size: 1.4em;
   }
 }
