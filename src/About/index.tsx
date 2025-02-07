@@ -44,7 +44,7 @@ const About: React.FC = () => {
 
           <p>
             🚀 I am actively seeking <strong>Internship/Co-op</strong> opportunities in
-            <strong> full-stack development</strong>, <strong>cloud infrastructure</strong> and <strong>machine learning</strong>, .
+            <strong> full-stack development</strong>, <strong>cloud infrastructure</strong> and <strong>machine learning</strong>.{" "}
             If you are looking for a dedicated team member, feel free to connect with me!
           </p>
 
