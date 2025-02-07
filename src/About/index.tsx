@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <h1>About Me</h1>
           <p>
             👋 Hi! I'm Jiashu (Cecilia) Qian, a graduate Computer Science student at Northeastern University.
-            I am proficient in Java/Python, TypeScript, and Kafka, paired with hands-on experience in:
+            I am proficient in Java/Python, TypeScript, and Kafka, with hands-on experience in:
           </p>
 
           <ul className="expertise-list">
@@ -62,9 +62,6 @@ const About: React.FC = () => {
             <img src={imageSrc} alt="Profile" className="profile-image" />
           </div>
         </div>
-
-
-
       </div>
 
 
