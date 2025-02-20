@@ -1,6 +1,6 @@
 /* ====== Global ====== */
 .projects-container {
-  min-height: 100vh;
+  min-height: 35vh;
   background-color: #fff;
   color: #333;
   display: flex;
@@ -48,6 +48,8 @@
 
 /* ====== Project Card ====== */
 .project-card {
+  display: flex;
+  gap: 50px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -57,10 +59,37 @@
   transition: all 0.3s ease-in-out;
 }
 
+.project-image-container {
+  flex: 0 0 auto;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+  transform: scale(1.1);
+}
+
+.project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  margin-bottom: 10px;
 }
 
 .project-header h2 {
@@ -70,13 +99,6 @@
   border-bottom: 2px solid #ddd;
   padding-bottom: 8px;
   transition: all 0.3s ease;
-}
-
-.project-header h2:hover {
-  color: #555;
-  transform: scale(1.03);
-  border-bottom-color: #555;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-header a {
@@ -110,4 +132,28 @@
 
 .project-tag:hover {
   background-color: #e0e0e0;
+}
+
+
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .project-image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-content {
+    flex: unset;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .project-header {
+    align-items: center;
+  }
 }

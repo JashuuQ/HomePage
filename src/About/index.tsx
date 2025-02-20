@@ -7,11 +7,11 @@ const Underline = ({ children }: { children: React.ReactNode }) => (
 );
 
 const About: React.FC = () => {
-  const [imageSrc, setImageSrc] = useState('/images/profile2.jpg');
+  const [imageSrc, setImageSrc] = useState('/images/profile3.jpg');
 
   const handleImageClick = () => {
     setImageSrc(prevSrc =>
-      prevSrc === '/images/profile2.jpg' ? '/images/profile3.jpg' : '/images/profile2.jpg'
+      prevSrc === '/images/profile3.jpg' ? '/images/profile2.jpg' : '/images/profile3.jpg'
     );
   };
 
