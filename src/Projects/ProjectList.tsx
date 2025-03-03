@@ -2,6 +2,16 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "DebateAI",
+    tags: ["React.js", "Redux",
+            "Python", "FastAPI", 
+            "Web Audio API", "WebGL", 
+            "WebSocket", "AI Integration", "Speech Processing"],
+    link: "https://github.com/liuxuanzhang718/Hackathon_DebateAI",
+    imageUrl: "/images/debate_ai.png",
+  },
+
+  {
     title: "EduTrack",
     tags: ["React.js", "React Router", "Redux", "Node.js", "Express.js", "RESTful API", "MongoDB", "Render"],
     link: "https://github.com/JashuuQ/EduTrack/tree/a6",

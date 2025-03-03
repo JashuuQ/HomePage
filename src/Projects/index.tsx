@@ -5,6 +5,7 @@ export default function Projects() {
   return (
     <main className="projects-container">
       <div className="projects-wrapper">
+
         <h1 className="projects-title">
           Projects
         </h1>
@@ -19,7 +20,9 @@ export default function Projects() {
             github.com/JashuuQ
           </a>
         </p>
+
         <ProjectList />
+
       </div>
     </main>
   );
