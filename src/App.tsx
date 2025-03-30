@@ -5,6 +5,7 @@ import About from "./About";
 import Projects from "./Projects";
 // import Blog from "./Blog";
 
+
 function App() {
   return (
     <HashRouter>

@@ -9,6 +9,10 @@ const Container = styled.div`
   display: flex;
   min-height: 100vh;
   font-family: "Helvetica Neue", Arial, sans-serif;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Home: React.FC = () => {

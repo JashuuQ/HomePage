@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaGraduationCap
-} from "react-icons/fa";
+
+import { 
+  FaMapMarkerAlt, 
+  FaEnvelope, 
+  FaLinkedin, 
+  FaGithub, 
+  FaGraduationCap 
+} from 'react-icons/fa';
 
 const LeftContainer = styled.div`
   flex: 1;
@@ -16,6 +17,12 @@ const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -26,6 +33,11 @@ const ProfileImage = styled.img`
   border: 5px solid #fff;
   box-shadow: 0 0 0 1px #ddd;
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 140px;
+    height: 140px;
+  }
 `;
 
 const NameTitle = styled.h3`
