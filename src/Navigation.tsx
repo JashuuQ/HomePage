@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navigation.css";
 
 interface Link {
@@ -10,7 +10,7 @@ interface Link {
 
 // Using the Array.map to generate navigation links dynamically 
 function Navigation() {
-  const [menuOpen, setMenuOpen] = useState(false); // control the shown state
+  const [menuOpen, setMenuOpen] = useState(false);
   const links: Link[] = [
     { to: "/about", label: "About" },
     { to: "/projects", label: "Projects" },
@@ -21,27 +21,36 @@ function Navigation() {
     setMenuOpen((prev) => !prev);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className="navigation">
-      {/* Home */}
+    <nav className={`navigation ${menuOpen ? "open" : ""}`}>
       <div className="navigation-home">
         <NavLink
           to="/"
           className={({ isActive }) =>
             isActive ? "navigation-link active" : "navigation-link"
           }
+          onClick={closeMenu}
         >
           Jiashu's Home
         </NavLink>
       </div>
-      
-      {/* Menu Button */}
-      <button className="menu-toggle" onClick={toggleMenu}>
-        <FaBars />
+
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+        aria-controls="navigation-list"
+        type="button"
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* Navigation list */}
-      <ul className="navigation-list">
+      <ul id="navigation-list" className="navigation-list">
         {links.map((link) => (
           <li key={link.to} className="navigation-item">
             <NavLink
@@ -49,7 +58,7 @@ function Navigation() {
               className={({ isActive }) =>
                 isActive ? "navigation-link active" : "navigation-link"
               }
-              onClick={() => setMenuOpen(false)} 
+              onClick={closeMenu}
             >
               {link.label}
             </NavLink>
@@ -59,6 +68,5 @@ function Navigation() {
     </nav>
   );
 }
-
 
 export default Navigation;

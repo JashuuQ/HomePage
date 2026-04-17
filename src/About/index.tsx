@@ -18,7 +18,6 @@ const About: React.FC = () => {
 
   return (
     <div className="about-container">
-      {/* Main Body：Left info & Right Img */}
       <div className="about-main">
         <div className="about-info">
           <h1>About Me</h1>
@@ -73,20 +72,23 @@ const About: React.FC = () => {
             onClick={handleImageClick}
             role="button"
             tabIndex={0}
+            aria-label="Toggle profile image"
           >
             <img src={imageSrc} alt="Profile" className="profile-image" />
           </div>
+          <p className="about-image-caption">Tap to switch the vibe.</p>
         </div>
       </div>
 
-      {/* Details Section */}
       <div className="details-section">
         <div className="detail-card">
           <section className="experience">
             <h2>Experience</h2>
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Amazon — Software Development Engineer Intern</h3>
+                <h3>
+                  <strong>Amazon</strong> — Software Development Engineer Intern
+                </h3>
                 <span className="exp-time">Aug. 2025 – Dec. 2025</span>
               </div>
               <p className="exp-highlight">
@@ -97,7 +99,10 @@ const About: React.FC = () => {
 
             <div className="experience-item">
               <div className="experience-header">
-                <h3>Expedia Group — Software Development Engineer Intern</h3>
+                <h3>
+                  <strong>Expedia Group</strong> — Software Development Engineer
+                  Intern
+                </h3>
                 <span className="exp-time">May 2025 – Jul. 2025</span>
               </div>
               <p className="exp-highlight">
@@ -108,7 +113,9 @@ const About: React.FC = () => {
 
             <div className="experience-item">
               <div className="experience-header">
-                <h3>JD.com — Backend Engineering Intern</h3>
+                <h3>
+                  <strong>JD.com</strong> — Backend Engineering Intern
+                </h3>
                 <span className="exp-time">Sept. 2022 – Nov. 2022</span>
               </div>
               <p className="exp-highlight">
@@ -145,15 +152,15 @@ const About: React.FC = () => {
           <section className="skills">
             <h2>Skills</h2>
             <div className="skills-list">
-              <p>
+              <p className="skill-row">
                 <strong>Programming:</strong> Java, Python,
                 JavaScript/TypeScript, C, MATLAB, SQL, HTML/CSS
               </p>
-              <p>
+              <p className="skill-row">
                 <strong>Frameworks:</strong> Spring Boot, Spring Cloud, Django,
                 Flask, React, Vue.js, Express.js, Node.js, Next.js
               </p>
-              <p>
+              <p className="skill-row">
                 <strong>Technologies: </strong>
                 Kafka, RabbitMQ, Redis, API Gateway, Eureka, Docker, Kubernetes,
                 Jenkins, Prometheus, Grafana, PostgreSQL, MongoDB, MySQL, AWS,

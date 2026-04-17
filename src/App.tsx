@@ -1,23 +1,23 @@
-import { HashRouter, Route, Routes, Navigate } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Navigation from "./Navigation";
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
-// import Blog from "./Blog";
+import Blog from "./Blog";
+import "./App.css";
 
 
 function App() {
   return (
     <HashRouter>
-      <div>
+      <div className="app-shell">
         <Navigation />
-        {/* Main Content */}
-        <main style={{ padding: "20px" }}>
+        <main className="app-main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            {/* <Route path="/blog" element={<Blog />} /> */}
+            <Route path="/blog" element={<Blog />} />
           </Routes>
         </main>
       </div>

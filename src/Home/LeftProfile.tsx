@@ -1,139 +1,145 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
-import { 
-  FaMapMarkerAlt, 
-  FaEnvelope, 
-  FaLinkedin, 
-  FaGithub, 
-  FaGraduationCap 
-} from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaGithub,
+  FaGraduationCap,
+  FaLinkedin,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const LeftContainer = styled.div`
-  flex: 1;
-  background-color: #f5f5f5;
-  padding: 40px;
-  border-right: 1px solid #ccc;
+  flex: 0 0 360px;
+  background: linear-gradient(180deg, #f6f5f1 0%, #efede8 100%);
+  padding: 56px 36px 40px;
+  border-right: 1px solid var(--border-soft);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
-  @media (max-width: 768px) {
-    padding: 20px;
+  @media (max-width: 960px) {
+    flex: none;
+    padding: 36px 24px 28px;
     border-right: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-soft);
   }
 `;
 
 const ProfileImage = styled.img`
-  width: 180px;
-  height: 180px;
+  width: 196px;
+  height: 196px;
   border-radius: 50%;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   border: 5px solid #fff;
-  box-shadow: 0 0 0 1px #ddd;
+  box-shadow: 0 0 0 1px var(--border-soft);
   object-fit: cover;
 
-  @media (max-width: 768px) {
-    width: 140px;
-    height: 140px;
+  @media (max-width: 960px) {
+    width: 160px;
+    height: 160px;
   }
 `;
 
 const NameTitle = styled.h3`
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
 `;
 
 const InfoText = styled.p`
   font-size: 1rem;
-  color: #555;
-  line-height: 1.4;
+  color: var(--text-body);
+  line-height: 1.6;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 0 26px;
 `;
 
 const InfoList = styled.ul`
   list-style: none;
   padding: 0;
-  line-height: 1.6;
+  margin: 0;
+  width: 100%;
+  max-width: 280px;
 `;
 
-/**
- * InfoItem:
- * - Each row: icon + label link
- */
 const InfoItem = styled.li`
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
-  color: #444;
-  margin: 10px 0;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 2px;
+  font-size: 0.98rem;
+  color: var(--text-body);
+  margin: 8px 0;
 `;
-
 
 const IconWrapper = styled.span`
-  margin-right: 10px;
-  font-size: 1.1rem; 
-  color: #777;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--text-body);
+  background: rgba(255, 255, 255, 0.78);
 `;
 
-/**
- * RowContent:
- * - This ensures the text is truly centered with the icon
- */
 const RowContent = styled.div`
+  flex: 1;
   display: flex;
   align-items: center;
   position: relative;
-  margin-top: 2px;
+  min-width: 0;
 `;
 
-/**
- * TooltipWrapper:
- * - keep the tooltip trigger in the same flex row so it doesn't shift
- */
 const TooltipWrapper = styled.span`
   position: relative;
-  display: inline-flex; 
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
+  font-weight: 500;
 `;
 
-/**
- * Tooltip:
- * - Appears below the trigger
- */
 const Tooltip = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 8px 12px;
-  margin-top: 6px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 190px;
+  padding: 10px 12px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-soft);
   z-index: 999;
 `;
 
 const CopyButton = styled.button`
   display: inline-block;
-  margin-top: 5px;
-  padding: 4px 8px;
-  font-size: 0.9rem;
+  margin-top: 8px;
+  padding: 8px 12px;
+  font-size: 0.88rem;
   border: none;
-  background-color: #eee;
+  background-color: #efede8;
+  color: var(--text-strong);
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 999px;
+
   &:hover {
-    background-color: #ddd;
+    background-color: #e1ddd6;
   }
 `;
 
 const ExternalLink = styled.a`
-  color: #333;
+  color: var(--text-strong);
   text-decoration: none;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+
   &:hover {
     text-decoration: underline;
   }
@@ -149,24 +155,22 @@ const LeftProfile: React.FC = () => {
 
   return (
     <LeftContainer>
-      <ProfileImage src="/images/profile1.jpg" alt="Profile1" />
+      <ProfileImage src="/images/profile1.jpg" alt="Jiashu Qian" />
       <NameTitle>Jiashu Qian</NameTitle>
       <InfoText>
         CS Master @ Northeastern,
-        <br/>
+        <br />
         B.S. @ ZJU
       </InfoText>
 
       <InfoList>
-        {/* LOCATION */}
         <InfoItem>
           <IconWrapper>
             <FaMapMarkerAlt />
           </IconWrapper>
-          <RowContent>Boston, MA</RowContent>
+          <RowContent>Seattle, WA</RowContent>
         </InfoItem>
 
-        {/* EMAIL (with tooltip) */}
         <InfoItem>
           <IconWrapper>
             <FaEnvelope />
@@ -187,7 +191,6 @@ const LeftProfile: React.FC = () => {
           </RowContent>
         </InfoItem>
 
-        {/* LINKEDIN */}
         <InfoItem>
           <IconWrapper>
             <FaLinkedin />
@@ -203,7 +206,6 @@ const LeftProfile: React.FC = () => {
           </RowContent>
         </InfoItem>
 
-        {/* GITHUB */}
         <InfoItem>
           <IconWrapper>
             <FaGithub />
@@ -219,7 +221,6 @@ const LeftProfile: React.FC = () => {
           </RowContent>
         </InfoItem>
 
-        {/* GOOGLE SCHOLAR */}
         <InfoItem>
           <IconWrapper>
             <FaGraduationCap />

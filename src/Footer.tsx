@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  margin-top: 20px;
-  padding: 10px;
+  margin-top: 6px;
+  padding: 18px 16px 26px;
   text-align: center;
-  background-color: #f1f1f1;
+  background-color: transparent;
   font-size: 14px;
-  color: #555;
+  color: var(--text-soft);
 
   @media (max-width: 576px) {
     font-size: 12px;
